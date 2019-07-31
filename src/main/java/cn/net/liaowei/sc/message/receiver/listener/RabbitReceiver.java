@@ -23,7 +23,7 @@ public class RabbitReceiver {
      * @param object 待处理的消息
      */
     // @RabbitListener(queues = "commonQueue")
-    @RabbitListener(queuesToDeclare = @Queue("commonQueue"))
+    @RabbitListener(queuesToDeclare = @Queue("commonTopic"))
     public void processCommon(CommonDTO object) {
         log.info("Process rabbit common Object: {}", object);
     }
@@ -34,9 +34,9 @@ public class RabbitReceiver {
      * @param object 待处理的消息
      */
     @RabbitListener(bindings = @QueueBinding(
-            exchange = @Exchange("orderQueue"),
+            exchange = @Exchange("orderTopic"),
             key = "fina",
-            value = @Queue("finaOrderQueue")
+            value = @Queue("finaOrderTopic")
     ))
     public void processFina(OrderDTO object) {
         log.info("Process rabbit fina Object: {}", object);
@@ -48,9 +48,9 @@ public class RabbitReceiver {
      * @param object 待处理的消息
      */
     @RabbitListener(bindings = @QueueBinding(
-            exchange = @Exchange("orderQueue"),
+            exchange = @Exchange("orderTopic"),
             key = "loan",
-            value = @Queue("loanOrderQueue")
+            value = @Queue("loanOrderTopic")
     ))
     public void processLoan(OrderDTO object) {
         log.info("Process rabbit loan Object: {}", object);
