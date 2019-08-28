@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sc-message</artifactId>
+    <artifactId>sc-message-receiver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sc-message</name>
+    <name>sc-message-receiver</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
